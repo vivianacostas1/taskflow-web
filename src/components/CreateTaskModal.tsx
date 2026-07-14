@@ -1,4 +1,5 @@
-import { useState, FormEvent } from 'react';
+import { useState } from 'react';
+import type { FormEvent } from 'react';
 import { tasksService } from '../api/tasks.service';
 import { useAuth } from '../context/AuthContext'; // ➕ Importamos la autenticación
 import type { Task } from '../types';
@@ -26,7 +27,7 @@ export function CreateTaskModal({ projectId, onCreated, onClose }: Props) {
         title: title.trim(),
         description: desc.trim() || undefined,
         projectId,
-        userId: user.id, // ➕ Le pasamos el ID del usuario al backend
+        //userId: user.id, // ➕ Le pasamos el ID del usuario al backend
         status: 'TODO',
       });
       onCreated(task);

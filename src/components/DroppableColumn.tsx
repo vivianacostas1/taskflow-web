@@ -1,13 +1,15 @@
 import { useDroppable } from '@dnd-kit/core';
-import { ReactNode } from 'react';
-export function DroppableColumn({ id, children }: { id: string; children:
-ReactNode }) {
- const { setNodeRef, isOver } = useDroppable({ id });
- return (
- <div ref={setNodeRef}
- className={`transition ${isOver ? 'ring-2 ring-blue-400 ring-offset-2
-rounded-xl' : ''}`}>
- {children}
- </div>
- );
+import type { ReactNode } from 'react';
+
+export function DroppableColumn({ id, children }: { id: string; children: ReactNode }) {
+  const { setNodeRef, isOver } = useDroppable({ id });
+
+  return (
+    <div 
+      ref={setNodeRef} 
+      className={`transition ${isOver ? 'ring-2 ring-blue-400 ring-offset-2 rounded-xl' : ''}`}
+    >
+      {children}
+    </div>
+  );
 }
